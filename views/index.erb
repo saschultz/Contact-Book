@@ -1,0 +1,13 @@
+<h1>Professional Contacts</h1>
+<a href="/contact_form">Add Contact</a>
+
+
+<h3>Here are your contacts:</h3>
+
+
+
+<ul>
+  <% @contactship.each() do |contact| %>
+    <li><a href="/contact"><%= contact.first_name() %> <%= contact.last_name() %> <%= contact.job_title() %> <%= contact.company() %></a></li>
+  <% end %>
+</ul>

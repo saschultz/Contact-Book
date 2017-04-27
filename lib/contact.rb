@@ -1,5 +1,8 @@
 class Contact
+@@contacts = []
+
   attr_accessor(:first_name, :last_name, :job_title, :company)
+
   define_method(:initialize) do |attributes|
     @first_name = attributes.fetch(:first_name)
     @last_name = attributes.fetch(:last_name)
@@ -7,6 +10,11 @@ class Contact
     @company = attributes.fetch(:company)
   end
 
+  define_singleton_method(:all) do
+    @@contacts
+  end
 
-
+  def save
+    @@contacts.push(self)
+  end
 end
