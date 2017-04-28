@@ -1,0 +1,83 @@
+<h1>Contact Info</h1>
+<h3>Add Mailing Address(es):</h3>
+<form action="/mailing_form" method="post">
+  <label for="street">Street:</label>
+  <input id="street" name="street" type="text">
+
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+
+  <button type="submit">Add Mailing Address</button>
+</form>
+<br>
+
+<h3>Add Email Address(es):</h3>
+<form action="/email_form" method="post">
+  <label for="email">Email:</label>
+  <input id="email" name="email" type="text">
+
+  <button type="submit">Add Email Address</button>
+</form>
+<br>
+
+<h3>Add Phone Number(s):</h3>
+<form action="/phone_form" method="post">
+  <label for="phone">Phone:</label>
+  <input id="phone" name="phone" type="text">
+
+  <button type="submit">Add Phone Number</button>
+</form>
+
+<!-- <form action="/mailing_form" method="post">
+  <label for="street">Street:</label>
+  <input id="street" name="street" type="text">
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+  <button type="submit">Add Mailing Address</button>
+</form>
+<form action="/mailing_form" method="post">
+  <label for="street">Street:</label>
+  <input id="street" name="street" type="text">
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+  <button type="submit">Add Mailing Address</button>
+</form> -->
+<br>
+<h3>Your contact's info:</h3>
+
+<h4>Mail Address(es)</h4>
+<ul>
+  <% @mail.each() do |mail| %>
+    <li><%= mail.street() %> <%= mail.city() %> <%= mail.state() %> <%= mail.zip() %></li>
+  <% end %>
+</ul>
+
+<h4>Email Address(es)</h4>
+<ul>
+  <% @email.each() do |email| %>
+    <li><%= email.email() %></li>
+  <% end %>
+</ul>
+
+<h4>Phone Number(s)</h4>
+<ul>
+  <% @phone.each() do |phone| %>
+    <li><%= phone.phone() %></li>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>
